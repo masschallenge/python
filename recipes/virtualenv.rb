@@ -21,6 +21,7 @@
 include_recipe "python::pip"
 
 python_pip "virtualenv" do
-  action :upgrade
+  version "16.6.1"
+  action :install
   version node['python']['virtualenv_version']
 end
