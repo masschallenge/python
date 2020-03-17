@@ -48,6 +48,7 @@ execute "install-pip" do
 end
 
 python_pip 'setuptools' do
-  action :upgrade
+  version "41.0.1"
+  action :install
   version node['python']['setuptools_version']
 end
