@@ -48,8 +48,6 @@ execute "install-pip" do
   not_if { ::File.exists?(pip_binary) }
 end
 
-python_pip 'setuptools' do
-  version "41.0.1"
-  action :install
-  version node['python']['setuptools_version']
+execute 'setuptools' do
+  command 'pip3 install setuptools==41.0.1'
 end
