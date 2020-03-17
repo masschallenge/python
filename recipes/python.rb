@@ -1,7 +1,16 @@
-execute "install-python" do
-    command 'sudo add-apt-repository ppa:deadsnakes/ppa'
+apt_repository "python3" do
+    uri 'http://ppa.launchpad.net/deadsnakes/ppa/ubuntu'
+    components ['trusty main']
+end
+
+
+execute "update" do
     command 'sudo apt-get update'
-    command 'sudo apt-get install python3.6'
+end
+
+package 'python3.6' do
+    options '--force-yes'
+    action :install
 end
 
 alternatives 'python-set-version-3' do
