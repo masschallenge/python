@@ -8,4 +8,5 @@ group :integration do
   cookbook "yum"
   cookbook "build-essential"
   cookbook "python_test", :path => "./test/cookbooks/python_test"
+  cookbook 'alternatives', github: 'vkhatri/chef-alternatives',  tag: "v0.2.0"
 end
