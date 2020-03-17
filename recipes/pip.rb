@@ -44,6 +44,7 @@ execute "install-pip" do
   command <<-EOF
   #{node['python']['binary']} get-pip.py
   EOF
+  command 'sudo curl -s -N https://bootstrap.pypa.io/ez_setup.py -o - | sudo python3.6 && sudo python3.6 -m easy_install pip'
   not_if { ::File.exists?(pip_binary) }
 end
 
