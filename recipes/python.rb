@@ -13,6 +13,11 @@ package 'python3.6' do
     action :install
 end
 
+package 'python3.6-dev' do
+    options '--force-yes'
+    action :install
+end
+
 alternatives 'python-set-version-3' do
     link_name 'python3'
     path '/usr/bin/python3.6'
