@@ -49,5 +49,6 @@ execute "install-pip" do
 end
 
 execute 'setuptools' do
-  command 'pip3 install setuptools==41.0.1'
+  command 'pip3 install setuptools==41.0.1 | python3'
+  retries 2
 end
