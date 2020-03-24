@@ -47,8 +47,3 @@ execute "install-pip" do
   command 'sudo curl -s -N https://bootstrap.pypa.io/ez_setup.py -o - | sudo python3.6 && sudo python3.6 -m easy_install pip'
   not_if { ::File.exists?(pip_binary) }
 end
-
-execute 'setuptools' do
-  command 'pip3 install setuptools==41.0.1 | python3'
-  retries 2
-end
